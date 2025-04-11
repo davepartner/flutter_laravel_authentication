@@ -29,13 +29,13 @@ class _RegisterPageState extends State<RegisterPage> {
 
     if (result == 'registered') {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Registration successful! Now login.')),
+        SnackBar(content: Text('Registration successful! Now login.' + result)),
       );
       Navigator.pushNamed(context, '/');
     } else {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(SnackBar(content: Text('Registration failed.')));
+      ).showSnackBar(SnackBar(content: Text('Registration failed.' + result)));
     }
   }
 

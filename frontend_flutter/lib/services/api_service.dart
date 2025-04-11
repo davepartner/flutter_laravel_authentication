@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const baseUrl = 'http://localhost:8000/api'; // adjust if hosted
+  static const baseUrl = 'http://localhost:8001/api'; // adjust if hosted
 
   // ck ment: Send login request with email
   static Future<String> requestOtp(String email) async {

@@ -29,17 +29,25 @@ class _LoginPageState extends State<LoginPage> {
 
     if (result == 'otp_sent') {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('OTP has been sent to your email')),
+        SnackBar(content: Text('OTP has been sent to your email '+result)),
       );
 
       // ck ment: Navigate to OTP entry page with email passed as argument
       Navigator.pushNamed(context, '/otp', arguments: email);
     } else if (result == 'not_found') {
       //Add message
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Email not found in our database. Please register first.. ' + result,
+          ),
+        ),
+      );
+
       Navigator.pushNamed(context, '/register', arguments: email);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Something went wrong. Try again.')),
+        SnackBar(content: Text('Something went wrong. Try again. ' + result)),
       );
     }
   }
